@@ -70,7 +70,7 @@ export default class WorldMap {
 
     const selectedTileServer = tileServers[this.ctrl.tileServer];
     (<any>window).L.tileLayer(selectedTileServer.url, {
-      maxZoom: 18,
+      maxZoom: 20,
       subdomains: selectedTileServer.subdomains,
       reuseTiles: true,
       detectRetina: true,
