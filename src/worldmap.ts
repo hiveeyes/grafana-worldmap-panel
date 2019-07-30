@@ -21,7 +21,6 @@ const tileServers = {
   'Google Hybrid': {
     url: 'http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',
     attribution: 'Tiles &copy; Google',
-    maxZoom: 20,
     subdomains: ['mt0','mt1','mt2','mt3'],
   },
   'Esri Satellite': {
