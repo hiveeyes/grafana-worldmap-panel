@@ -18,6 +18,11 @@ const tileServers = {
       '&copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
     subdomains: 'abcd',
   },
+  'Google Hybrid': {
+    url: 'http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',
+    attribution: 'Tiles &copy; Google',
+    subdomains: ['mt0','mt1','mt2','mt3'],
+  },
   'Esri Satellite': {
     url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
     attribution: 'Tiles &copy; Esri',

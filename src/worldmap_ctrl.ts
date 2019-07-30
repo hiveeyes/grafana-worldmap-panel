@@ -185,7 +185,7 @@ export default class WorldmapCtrl extends MetricsPanelCtrl {
     /*
      * Configure the Leaflet map widget.
      */
-    this.tileServer = 'Esri Satellite';
+    this.tileServer = 'Google Hybrid';
     this.setMapSaturationClass();
   }
 
@@ -195,8 +195,10 @@ export default class WorldmapCtrl extends MetricsPanelCtrl {
      */
     if (this.tileServer === "CartoDB Dark") {
       this.saturationClass = "map-darken";
-    } else if (this.tileServer === 'Esri Satellite') {
-      this.saturationClass = 'map-desaturate';
+    } else if (this.tileServer === "Esri Satellite") {
+      this.saturationClass = "map-desaturate";
+    } else if (this.tileServer === "Google Hybrid") {
+      this.saturationClass = "";
     } else {
       this.saturationClass = "";
     }
