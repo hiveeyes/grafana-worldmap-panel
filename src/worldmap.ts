@@ -152,7 +152,7 @@ export default class WorldMap {
         circle.setStyle({
           color: this.getColor(dataPoint.value),
           fillColor: this.getColor(dataPoint.value),
-          fillOpacity: 0.5,
+          fillOpacity: parseFloat(this.ctrl.panel.fillOpacity || 0.5,
           location: dataPoint.key,
         });
         circle.unbindPopup();
@@ -166,7 +166,7 @@ export default class WorldMap {
       radius: this.calcCircleSize(dataPoint.value || 0),
       color: this.getColor(dataPoint.value),
       fillColor: this.getColor(dataPoint.value),
-      fillOpacity: 0.5,
+      fillOpacity: parseFloat(this.ctrl.panel.fillOpacity || 0.5,
       location: dataPoint.key,
     });
 
