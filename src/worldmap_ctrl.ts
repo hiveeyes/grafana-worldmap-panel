@@ -18,6 +18,7 @@ const panelDefaults = {
   valueName: "total",
   circleMinSize: 2,
   circleMaxSize: 30,
+  fillOpacity: 0.5,
   locationData: "countries",
   thresholds: "0,10",
   colors: [
