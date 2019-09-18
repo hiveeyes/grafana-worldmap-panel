@@ -1,6 +1,6 @@
 {
-  "name": "worldmap-panel",
-  "version": "1.0.0",
+  "name": "worldmap-panel-todi",
+  "version": "0.2",
   "description": "Worldmap Panel Plugin for Grafana",
   "main": "src/module.js",
   "scripts": {
