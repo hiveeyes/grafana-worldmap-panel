@@ -376,29 +376,53 @@ export default class DataFormatter {
     }
   }
 
-  setJsonValues(data) {
-    if (this.ctrl.series && this.ctrl.series.length > 0) {
+  setJsonValues(series, data) {
+    if (series && series.length > 0) {
       let highestValue = 0;
       let lowestValue = Number.MAX_VALUE;
 
-      this.ctrl.series.forEach(point => {
-        // Todo: Bring this up to speed with the current state in `setTableValues`.
-        const dataValue = {
-          key: point.key,
-          locationName: point.name,
-          locationLatitude: point.latitude,
-          locationLongitude: point.longitude,
-          value: point.value !== undefined ? point.value : 1,
-          valueRounded: 0,
-        };
-        if (dataValue.value > highestValue) {
-          highestValue = dataValue.value;
+      series.forEach(serie => {
+        if (serie.datapoints && serie.datapoints.length > 0) {
+          serie.datapoints.forEach(point => {
+            console.log(point);
+            // Todo: Bring this up to speed with the current state in `setTableValues`.
+            const dataValue = {
+              key: point.key,
+              locationName: point.name,
+              locationLatitude: point.latitude,
+              locationLongitude: point.longitude,
+              value: point.value !== undefined ? point.value : 1,
+              valueRounded: 0,
+            };
+            if (dataValue.value > highestValue) {
+              highestValue = dataValue.value;
+            }
+            if (dataValue.value < lowestValue) {
+              lowestValue = dataValue.value;
+            }
+            dataValue.valueRounded = Math.round(dataValue.value);
+            data.push(dataValue);
+          });
+        } else {
+          console.log(serie);
+          // Todo: Bring this up to speed with the current state in `setTableValues`.
+          const dataValue = {
+            key: serie.key,
+            locationName: serie.name,
+            locationLatitude: serie.latitude,
+            locationLongitude: serie.longitude,
+            value: serie.value !== undefined ? serie.value : 1,
+            valueRounded: 0,
+          };
+          if (dataValue.value > highestValue) {
+            highestValue = dataValue.value;
+          }
+          if (dataValue.value < lowestValue) {
+            lowestValue = dataValue.value;
+          }
+          dataValue.valueRounded = Math.round(dataValue.value);
+          data.push(dataValue);
         }
-        if (dataValue.value < lowestValue) {
-          lowestValue = dataValue.value;
-        }
-        dataValue.valueRounded = Math.round(dataValue.value);
-        data.push(dataValue);
       });
       data.highestValue = highestValue;
       data.lowestValue = lowestValue;
