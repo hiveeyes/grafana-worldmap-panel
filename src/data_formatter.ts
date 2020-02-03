@@ -378,8 +378,6 @@ export default class DataFormatter {
 
   setJsonValues(series, data) {
     if (series && series.length > 0) {
-      let highestValue = 0;
-      let lowestValue = Number.MAX_VALUE;
 
       series.forEach(serie => {
         if (serie.datapoints && serie.datapoints.length > 0) {
@@ -394,12 +392,7 @@ export default class DataFormatter {
               value: point.value !== undefined ? point.value : 1,
               valueRounded: 0,
             };
-            if (dataValue.value > highestValue) {
-              highestValue = dataValue.value;
-            }
-            if (dataValue.value < lowestValue) {
-              lowestValue = dataValue.value;
-            }
+
             dataValue.valueRounded = Math.round(dataValue.value);
             data.push(dataValue);
           });
@@ -414,22 +407,29 @@ export default class DataFormatter {
             value: serie.value !== undefined ? serie.value : 1,
             valueRounded: 0,
           };
-          if (dataValue.value > highestValue) {
-            highestValue = dataValue.value;
-          }
-          if (dataValue.value < lowestValue) {
-            lowestValue = dataValue.value;
-          }
           dataValue.valueRounded = Math.round(dataValue.value);
           data.push(dataValue);
         }
       });
-      data.highestValue = highestValue;
-      data.lowestValue = lowestValue;
-      data.valueRange = highestValue - lowestValue;
+
+      this.computeValueRange(data);
     } else {
       this.addWarning('No data in JSON format received');
     }
+  }
+
+  computeValueRange(data) {
+    const sortedValues = data.map(datapoint => {
+      return datapoint.value;
+    });
+
+    sortedValues.sort((a, b) => a - b);
+
+    data.highestValue = sortedValues[sortedValues.length - 1];
+    data.lowestValue = sortedValues[0];
+    data.valueRange = data.highestValue - data.lowestValue;
+
+    return data;
   }
 
   addWarning(message) {
