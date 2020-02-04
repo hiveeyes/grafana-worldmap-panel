@@ -126,7 +126,7 @@ export default class DataFormatter {
     }
   }
 
-  createDataValue(encodedGeohash, decodedGeohash, locationName, value, link) {
+  createDataValueWithGeohash(encodedGeohash, decodedGeohash, locationName, value, link) {
     // Todo: Bring this up to speed with the current state in `setTableValues`.
     const dataValue = {
       key: encodedGeohash,
@@ -140,6 +140,21 @@ export default class DataFormatter {
     };
 
     dataValue.valueRounded = kbn.roundValue(dataValue.value, this.settings.decimals || 0);
+    return dataValue;
+  }
+
+  createDataValueFromPoint(point) {
+    const dataValue = {
+      key: point.key,
+      locationName: point.name,
+      locationLatitude: point.latitude,
+      locationLongitude: point.longitude,
+      value: point.value !== undefined ? point.value : 1,
+      valueRounded: 0,
+    };
+
+    dataValue.valueRounded = kbn.roundValue(dataValue.value, this.settings.decimals || 0);
+
     return dataValue;
   }
 
@@ -200,7 +215,7 @@ export default class DataFormatter {
             const value = row[columnNames[this.settings.esMetric]];
             const link = this.settings.esLink ? row[columnNames[this.settings.esLink]] : null;
 
-            const dataValue = this.createDataValue(encodedGeohash, decodedGeohash, locationName, value, link);
+            const dataValue = this.createDataValueWithGeohash(encodedGeohash, decodedGeohash, locationName, value, link);
             if (dataValue.value > highestValue) {
               highestValue = dataValue.value;
             }
@@ -231,7 +246,7 @@ export default class DataFormatter {
             const value = datapoint[this.settings.esMetric];
             const link = this.settings.esLink ? datapoint[this.settings.esLink] : null;
 
-            const dataValue = this.createDataValue(encodedGeohash, decodedGeohash, locationName, value, link);
+            const dataValue = this.createDataValueWithGeohash(encodedGeohash, decodedGeohash, locationName, value, link);
             if (dataValue.value > highestValue) {
               highestValue = dataValue.value;
             }
@@ -378,37 +393,15 @@ export default class DataFormatter {
 
   setJsonValues(series, data) {
     if (series && series.length > 0) {
-
       series.forEach(serie => {
         if (serie.datapoints && serie.datapoints.length > 0) {
           serie.datapoints.forEach(point => {
-            console.log(point);
             // Todo: Bring this up to speed with the current state in `setTableValues`.
-            const dataValue = {
-              key: point.key,
-              locationName: point.name,
-              locationLatitude: point.latitude,
-              locationLongitude: point.longitude,
-              value: point.value !== undefined ? point.value : 1,
-              valueRounded: 0,
-            };
-
-            dataValue.valueRounded = Math.round(dataValue.value);
-            data.push(dataValue);
+            data.push(this.createDataValueFromPoint(point));
           });
         } else {
-          console.log(serie);
           // Todo: Bring this up to speed with the current state in `setTableValues`.
-          const dataValue = {
-            key: serie.key,
-            locationName: serie.name,
-            locationLatitude: serie.latitude,
-            locationLongitude: serie.longitude,
-            value: serie.value !== undefined ? serie.value : 1,
-            valueRounded: 0,
-          };
-          dataValue.valueRounded = Math.round(dataValue.value);
-          data.push(dataValue);
+          data.push(this.createDataValueFromPoint(serie));
         }
       });
 
