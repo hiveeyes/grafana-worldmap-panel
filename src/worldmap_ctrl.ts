@@ -41,6 +41,7 @@ const panelDefaults = {
   customAttributionText: null,
   mouseWheelZoom: false,
   dragging: true,
+  doubleClickZoom: true,
   esGeoPoint: null,
   // Todo: Investigate: Is "Count" a reasonable default here
   //  or does it confuse the operator?
@@ -507,6 +508,11 @@ export default class WorldmapCtrl extends MetricsPanelCtrl {
 
   toggleDragging() {
     this.map.setDragging();
+    this.render();
+  }
+
+  toggleDoubleClickZoom() {
+    this.map.setDoubleClickZoom();
     this.render();
   }
 

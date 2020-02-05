@@ -454,6 +454,14 @@ export default class WorldMap {
     }
   }
 
+  setDoubleClickZoom() {
+    if (!this.ctrl.settings.doubleClickZoom) {
+      this.map.doubleClickZoom.disable();
+    } else {
+      this.map.doubleClickZoom.enable();
+    }
+  }
+
   addCircles(circles) {
     // Todo: Optionally add fixed custom attributions to the circle layer.
     const attribution = undefined;
