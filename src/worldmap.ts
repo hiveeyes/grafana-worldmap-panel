@@ -48,6 +48,7 @@ export default class WorldMap {
     });
     this.setMouseWheelZoom();
     this.setDragging();
+    this.setDoubleClickZoom();
 
     const selectedTileServer = tileServers[this.ctrl.tileServer];
     (window as any).L.tileLayer(selectedTileServer.url, {
