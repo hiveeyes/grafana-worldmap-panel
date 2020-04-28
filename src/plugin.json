@@ -1,7 +1,7 @@
 {
   "type": "panel",
   "name": "Worldmap Panel Todi",
-  "id": "grafana-worldmap-panel",
+  "id": "grafana-worldmap-panel-todi",
 
   "info": {
     "description": "World Map panel for Grafana. Displays time series data or geohash data from Elasticsearch overlaid on a world map.",
