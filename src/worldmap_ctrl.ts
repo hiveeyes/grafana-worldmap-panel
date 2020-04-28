@@ -46,6 +46,7 @@ const panelDefaults = {
 
 const mapCenters = {
   "(0°, 0°)": { mapCenterLatitude: 0, mapCenterLongitude: 0 },
+  "Frederiksberg": { mapCenterLatitude: 55.682, mapCenterLongitude: 12.5255},
   "North America": { mapCenterLatitude: 40, mapCenterLongitude: -100 },
   Europe: { mapCenterLatitude: 46, mapCenterLongitude: 14 },
   "West Asia": { mapCenterLatitude: 26, mapCenterLongitude: 53 },
