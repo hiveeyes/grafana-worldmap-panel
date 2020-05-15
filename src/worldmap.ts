@@ -370,8 +370,12 @@ export default class WorldMap {
     } else {
       unit = value && value === 1 ? this.ctrl.settings.unitSingular : this.ctrl.settings.unitPlural;
     }
-    const label = `${locationName}: ${value} ${unit || ''}`.trim();
-    return label;
+
+    if (this.ctrl.settings.formatOmitEmptyValue && value === 'n/a') {
+      return `${locationName}`.trim();
+    } else {
+      return `${locationName}: ${value} ${unit || ''}`.trim();
+    }
   }
 
   getColor(value) {

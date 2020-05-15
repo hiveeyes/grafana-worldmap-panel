@@ -72,6 +72,7 @@ const panelDefaults = {
   },
   ignoreEscapeKey: false,
   hideTimepickerNavigation: false,
+  formatOmitEmptyValue: false,
 };
 
 export default class WorldmapCtrl extends MetricsPanelCtrl {
