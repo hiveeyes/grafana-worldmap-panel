@@ -1,7 +1,20 @@
 # Changelog
 
 ## development
+- Improve tests for checking "clickthroughUrl" interpolation
+- Add tests for elasticsearch query results, both for table- and timeseries-data
+- Interpolate datapoint field values with `__field_` prefix into transformation
+  data, now also for elasticsearch queries.
+
+
+## v0.9.0
+- Add a toggle to disable panning/dragging on the map. Thanks, @gdunstone.
+
+
+## v0.8.1
 - Fix CircleCI reporting. Thanks, @ryantxu!
+- Add South Sudan to ``countries*.json``. Thanks, @Hipska and @javl!
+
 
 ## v0.8.0
 - Fix "Fit to data" zooming (#25)
