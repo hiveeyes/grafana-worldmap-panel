@@ -274,7 +274,7 @@ export default class WorldMap {
     });
 
     this.createClickthrough(circle, dataPoint);
-    const content = this.getPopupContent(dataPoint.locationName, dataPoint.valueRounded);
+    const content = this.getPopupContent(dataPoint);
     this.createPopup(circle, content);
     return circle;
   }
@@ -296,7 +296,7 @@ export default class WorldMap {
 
       // Re-create popup.
       circle.unbindPopup();
-      const content = this.getPopupContent(dataPoint.locationName, dataPoint.valueRounded);
+      const content = this.getPopupContent(dataPoint);
       this.createPopup(circle, content);
 
       // Re-create clickthrough-link.
@@ -395,12 +395,16 @@ export default class WorldMap {
   extendPopupContent(circle, dataPoint) {
     const popup = circle.getPopup();
     let popupContent = popup._content;
-    popupContent += `\n${this.getPopupContent(dataPoint.locationName, dataPoint.valueRounded)}`;
+    popupContent += `\n${this.getPopupContent(dataPoint)}`;
     circle.setPopupContent(popupContent);
   }
 
-  getPopupContent(locationName, value) {
+  getPopupContent(dataPoint) {
     let unit;
+
+    let locationName = dataPoint.locationName;
+    let value = dataPoint.value;
+
     if (_.isNaN(value)) {
       value = 'n/a';
     } else {
