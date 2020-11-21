@@ -574,7 +574,7 @@
                bs-tooltip="'Provide the min and max latitude values, separated by a comma'"></i>
         </label>
         <input type="text" class="input-small gf-form-input width-10" 
-               ng-model="ctrl.panel.overlayLatRange" placeholder="0,10"
+               ng-model="ctrl.panel.overlayRangeLatitude" placeholder="0,10"
                ng-change="ctrl.refreshOverlay()"
                ng-model-onblur/>
     </div>
@@ -585,7 +585,7 @@
                bs-tooltip="'Provide the min and max longitude values, separated by a comma'"></i>
         </label>
         <input type="text" class="input-small gf-form-input width-10" 
-               ng-model="ctrl.panel.overlayLngRange" placeholder="0,20"
+               ng-model="ctrl.panel.overlayRangeLongitude" placeholder="0,20"
                ng-change="ctrl.refreshOverlay()" 
                ng-model-onblur/>
     </div>

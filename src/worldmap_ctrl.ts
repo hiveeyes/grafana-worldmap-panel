@@ -61,8 +61,8 @@ const panelDefaults = {
   enableOverlay: false,
   overlayUrl: '',
   overlayOpacity: 0.5,
-  overlayLatRange: '0,10',
-  overlayLngRange: '0,20',
+  overlayRangeLatitude: '0,10',
+  overlayRangeLongitude: '0,20',
   clickthroughUrl: '',
   clickthroughOptions: {
     windowName: null,

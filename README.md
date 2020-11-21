@@ -293,6 +293,11 @@ The URL where the image is available. Please notice that only URLs can be used (
 
 **Overlay opacity**
 
+The image overlay's opacity can be controlled (0=completely transparent, 1=completely opaque)
+
+**Latitude and longitude ranges**
+
+Specify the limits of the image in the map. Enter the minimum and maximum latitude, and the minimum and maximum longitude, separated by a comma. These numbers specify the extent of the overlay.
 
 ### CHANGELOG
 

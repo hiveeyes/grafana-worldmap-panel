@@ -167,11 +167,11 @@ export default class WorldMap {
 
   createOverlay() {
     // See https://leafletjs.com/reference-1.3.4.html#imageoverlay for example usage
-    const latRange = this.ctrl.settings.overlayLatRange
+    const latRange = this.ctrl.settings.overlayRangeLatitude
         .split(',')
         .slice(0, 2)
         .map(x => Number(x)),
-      lngRange = this.ctrl.settings.overlayLngRange
+      lngRange = this.ctrl.settings.overlayRangeLongitude
         .split(',')
         .slice(0, 2)
         .map(x => Number(x));

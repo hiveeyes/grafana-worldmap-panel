@@ -479,8 +479,8 @@ describe('Worldmap', () => {
     beforeEach(() => {
       ctrl.panel.enableOverlay = true;
       ctrl.panel.overlayUrl = 'http://foo.bar/overlay.png';
-      ctrl.panel.overlayLatRange = '0,1.23';
-      ctrl.panel.overlayLngRange = '-2., 3';
+      ctrl.panel.overlayRangeLatitude = '0,1.23';
+      ctrl.panel.overlayRangeLongitude = '-2., 3';
       worldMap.createOverlay();
     });
 
