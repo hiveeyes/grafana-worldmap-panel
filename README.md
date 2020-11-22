@@ -281,7 +281,7 @@ The threshold field also accepts 2 or more comma-separated values. For example, 
 
 Optionally, you can show an image over the base map (but below the data points). This could be useful, for example, to show a more detailed/up-to-date image of the area of interest, in case the map provider only has old or low-resolution images. See below for an example of displaying interpolated sensor data (for example, temperatures in a field while only knowing the temperatures at a few sensors).
 
-![Image overlay example](src/images/overlay_example.png)
+![Image overlay example](https://raw.githubusercontent.com/panodata/grafana-map-panel/develop/src/images/overlay_example.png)
 
 **Enable overlay**
 
