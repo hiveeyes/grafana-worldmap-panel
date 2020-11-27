@@ -1,8 +1,10 @@
 import * as _ from 'lodash';
 import $ from 'jquery';
-import * as L from './libs/leaflet';
+import './libs/leaflet_plus';
+import * as L from 'leaflet';
 import WorldmapCtrl from './worldmap_ctrl';
 import { ColorModes } from './model';
+import { LatLngExpression } from 'leaflet';
 
 const tileServers = {
   'CARTO Positron': {
@@ -27,6 +29,7 @@ export default class WorldMap {
   circles: any[];
   map: any;
   legend: any;
+  overlay: any;
   circlesLayer: any;
 
   constructor(ctrl, mapContainer) {
@@ -160,6 +163,26 @@ export default class WorldMap {
     if (this.ctrl.settings.legendContainerSelector) {
       $(this.ctrl.settings.legendContainerSelector).append(this.legend._div);
     }
+  }
+
+  createOverlay() {
+    // See https://leafletjs.com/reference-1.3.4.html#imageoverlay for example usage
+    const latRange = this.ctrl.settings.overlayRangeLatitude
+        .split(',')
+        .slice(0, 2)
+        .map(x => Number(x)),
+      lngRange = this.ctrl.settings.overlayRangeLongitude
+        .split(',')
+        .slice(0, 2)
+        .map(x => Number(x));
+    var imageBounds = [
+      [latRange[0], lngRange[0]],
+      [latRange[1], lngRange[1]],
+    ];
+    this.overlay = (window as any).L.imageOverlay(this.ctrl.settings.overlayUrl, imageBounds, {
+      opacity: this.ctrl.settings.overlayOpacity,
+    });
+    this.overlay.addTo(this.map);
   }
 
   needToRedrawCircles(data) {
@@ -475,7 +498,7 @@ export default class WorldMap {
     // controls the map centering and zoom level.
     const mapDimensions = this.ctrl.settings.center;
 
-    let coordinates = [mapDimensions.mapCenterLatitude, mapDimensions.mapCenterLongitude];
+    let coordinates: LatLngExpression = [mapDimensions.mapCenterLatitude, mapDimensions.mapCenterLongitude];
     let zoomLevel = mapDimensions.mapZoomLevel;
 
     if (mapDimensions.mapFitData) {

@@ -2,7 +2,7 @@ import { loadPluginCss, MetricsPanelCtrl } from 'grafana/app/plugins/sdk';
 
 import * as _ from 'lodash';
 import './styles/worldmap-panel.css';
-import './styles/leaflet.css';
+import 'leaflet/dist/leaflet.css';
 import PluginSettings from './settings';
 import WorldMap from './worldmap';
 import { ColorModes, LocationSources, MapCenters } from './model';
@@ -58,6 +58,11 @@ const panelDefaults = {
   ignoreEmptyGeohashValues: false,
   ignoreInvalidGeohashValues: false,
   stickyLabels: false,
+  enableOverlay: false,
+  overlayUrl: '',
+  overlayOpacity: 0.5,
+  overlayRangeLatitude: '0,10',
+  overlayRangeLongitude: '0,20',
   clickthroughUrl: '',
   clickthroughOptions: {
     windowName: null,
@@ -457,6 +462,10 @@ export default class WorldmapCtrl extends MetricsPanelCtrl {
         ctrl.map.createLegend();
       }
 
+      if (!ctrl.map.overlay && ctrl.panel.enableOverlay) {
+        ctrl.map.createOverlay();
+      }
+
       ctrl.map.drawCircles();
 
       if (ctrl.mapCenterMoved) {
@@ -537,6 +546,12 @@ export default class WorldmapCtrl extends MetricsPanelCtrl {
     if (!this.settings.showLegend) {
       this.map.removeLegend();
     }
+    this.render();
+  }
+
+  refreshOverlay() {
+    this.map.overlay.remove();
+    this.map.overlay = null;
     this.render();
   }
 

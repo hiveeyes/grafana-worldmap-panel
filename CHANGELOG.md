@@ -2,9 +2,16 @@
 
 ## development
 
+## v0.14.0
+- Add test for customization of Leaflet Popup's "autoWidth" option
+- Extract Leaflet's custom "autoWidth" option into "leaflet_plus.ts"
+- Use vanilla Leaflet 1.7.1
+- Add feature to add an image overlay to the map. Thanks, @jreyesr!
+
 ## v0.13.0
 - Update basemaps URL to the new CARTO CDN URL. Thanks, @skgsergio!
 - Editor UI cleanups. Thanks, @matschaffer!
+- Upgrade to jQuery 3.5.1
 
 ## v0.12.0
 - Add `formatOmitEmptyValue` settings parameter to hide `n/a` value. Thanks, @iruizr7!
