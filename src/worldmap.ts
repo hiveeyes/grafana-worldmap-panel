@@ -437,7 +437,7 @@ export default class WorldMap {
     if (this.ctrl.settings.formatOmitEmptyValue && value === 'n/a') {
       return `${locationName}`.trim();
     } else {
-      let fieldPrefix = "__field_"
+      let fieldPrefix = '__field_';
 
       let specialFields = [
         fieldPrefix + this.ctrl.settings.esLocationName,
@@ -445,15 +445,17 @@ export default class WorldMap {
         fieldPrefix + this.ctrl.settings.esGeoPoint,
       ];
 
-      let freeDataFields = Object.keys(dataPoint).filter((key: string) =>
-          key.startsWith(fieldPrefix) && !specialFields.includes(key)
+      let freeDataFields = Object.keys(dataPoint).filter(
+        (key: string) => key.startsWith(fieldPrefix) && !specialFields.includes(key)
       );
 
-      let freeDataDisplay = freeDataFields.map((field: string) => {
-        let name = field.slice(fieldPrefix.length);
-        let value = dataPoint[field];
-        return `<br />${name}: ${value}`
-      }).join("");
+      let freeDataDisplay = freeDataFields
+        .map((field: string) => {
+          let name = field.slice(fieldPrefix.length);
+          let value = dataPoint[field];
+          return `<br />${name}: ${value}`;
+        })
+        .join('');
 
       return `${locationName}: ${value} ${unit || ''}${freeDataDisplay}`.trim();
     }
