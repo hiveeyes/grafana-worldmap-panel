@@ -139,42 +139,24 @@ describe('Worldmap', () => {
   });
 
   describe('when the data has multiple metrics', () => {
-
-    // dataPoint example:
-    // {
-    //   "key": "wecnv3p07bjj",
-    //   "locationName": "safecast:903348716",
-    //   "locationLatitude": 22.285810438916087,
-    //   "locationLongitude": 114.14674373343587,
-    //   "valueRounded": null,
-    //   "link": null,
-    //   "__field_device_urn": "safecast:903348716",
-    //   "__field_ingest.location": "wecnv3p07bjj",
-    //   "__field_Average pms_pm02_5": null,
-    //   "__field_Average lnd_7318u": 110
-    // }
-
-    // this.ctrl.settings.
-    // esGeoPoint = "ingest.location"
-    // esLink = ""
-    // esLocationName = "device_urn"
-    // esMetric = "Average pms_pm02_5"
-
     beforeEach(() => {
       ctrl.data = new DataBuilder()
-          .withCountryAndValue('SE', 1)
-          .withCountryAndValue('IE', 2)
-          .withDataRange(1, 2, 1)
+          .withCountryAndValue('SE', 1, {
+            "__field_device_urn": "safecast:903348716",
+            "__field_ingest.location": "wecnv3p07bjj",
+            "__field_Average pms_pm02_5": 33,
+            "__field_Average lnd_7318u": 110
+          })
           .build();
-      ctrl.panel.circleMinSize = '2';
-      ctrl.panel.circleMaxSize = '10';
-      ctrl.panel.unitSingular = 'error';
-      ctrl.panel.unitPlural = 'errors';
+
+      ctrl.panel.esGeoPoint = "ingest.location"
+      ctrl.panel.esLocationName = "device_urn"
+      ctrl.panel.esMetric = "Average pms_pm02_5"
       worldMap.drawCircles();
     });
 
     it('should create a circle popup with additional metrics', () => {
-      //expect(worldMap.circles[0]._popup._content).toBe('Sweden: 1 error');
+      expect(worldMap.circles[0]._popup._content).toBe('Sweden: 1 <br />Average lnd_7318u: 110');
     });
   });
 
