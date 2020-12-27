@@ -126,31 +126,33 @@ export default class WorldMap {
       case ColorModes.threshold.id:
       default:
         return () => {
-          const thresholds = this.ctrl.data.thresholds.slice();
-          const colors = this.ctrl.settings.colors.slice();
+          const thresholds = this.ctrl.data.thresholds;
+          const colors = this.ctrl.settings.colors;
+
+          let labels: string[] = [];
+
+          labels.push(`
+              <div class="legend-item">
+                  <i style="background: ${colors[0]}"></i>
+                  &lt; ${thresholds[0]}
+              </div>            
+          `);
+
+          for (let index = 0; index < thresholds.length; index += 1) {
+            labels.push(`
+              <div class="legend-item">
+                  <i style="background: ${colors[index + 1]}"></i>
+                  ${thresholds[index]}
+                  ${thresholds[index + 1] ? '&ndash; ' + thresholds[index + 1] : '+'}                  
+              </div>            
+            `);
+          }
 
           if (this.ctrl.settings.reverseLegend) {
-            thresholds.reverse();
-            colors.reverse();
+            labels.reverse();
           }
 
-          let legendHtml = '';
-          legendHtml +=
-            '<div class="legend-item"><i style="background:' +
-            colors[0] +
-            '"></i> ' +
-            '&lt; ' +
-            thresholds[0] +
-            '</div>';
-          for (let index = 0; index < thresholds.length; index += 1) {
-            legendHtml +=
-              '<div class="legend-item"><i style="background:' +
-              colors[index + 1] +
-              '"></i> ' +
-              thresholds[index] +
-              (thresholds[index + 1] ? '&ndash;' + thresholds[index + 1] + '</div>' : '+');
-          }
-          this.legend._div.innerHTML = legendHtml;
+          this.legend._div.innerHTML = labels.join('');
         };
     }
   }
