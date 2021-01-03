@@ -139,12 +139,17 @@ export default class WorldMap {
           `);
 
           for (let index = 0; index < thresholds.length; index += 1) {
+            let next = '+';
+
+            if (thresholds[index + 1]) {
+              next = ' &ndash; ' + thresholds[index + 1];
+            }
+
             labels.push(`
               <div class="legend-item">
                   <i style="background: ${colors[index + 1]}"></i>
-                  ${thresholds[index]}
-                  ${thresholds[index + 1] ? '&ndash; ' + thresholds[index + 1] : '+'}                  
-              </div>            
+                  ${thresholds[index]}${next}
+              </div>
             `);
           }
 

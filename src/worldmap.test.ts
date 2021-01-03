@@ -375,12 +375,14 @@ describe('Worldmap', () => {
 
     it('should create a legend with two legend values', () => {
       expect(worldMap.legend).toBeDefined();
-      expect(worldMap.legend._div.outerHTML).toBe(
-        '<div class="info legend leaflet-control">' +
-          '<div class="legend-item">' +
-          '<i style="background:red"></i> &lt; 2</div><div class="legend-item"><i style="background:blue"></i> 2+</div>' +
-          '</div>'
-      );
+      let elements = [...worldMap.legend._div.querySelectorAll('.legend-item')];
+      expect(elements.length).toEqual(2);
+
+      let labels = elements.map(e => e.textContent.trim());
+      expect(labels).toEqual(['< 2', '2+']);
+
+      let colors = elements.map(e => e.querySelector('i').style.getPropertyValue('background'));
+      expect(colors).toEqual(['red', 'blue']);
     });
   });
 
@@ -404,11 +406,14 @@ describe('Worldmap', () => {
 
     it('should create a legend with three legend values', () => {
       expect(worldMap.legend).toBeDefined();
-      expect(worldMap.legend._div.outerHTML).toBe(
-        '<div class="info legend leaflet-control"><div class="legend-item">' +
-          '<i style="background:red"></i> &lt; 2</div><div class="legend-item"><i style="background:blue"></i> 2–4</div>' +
-          '<div class="legend-item"><i style="background:green"></i> 4+</div></div>'
-      );
+      let elements = [...worldMap.legend._div.querySelectorAll('.legend-item')];
+      expect(elements.length).toEqual(3);
+
+      let labels = elements.map(e => e.textContent.trim());
+      expect(labels).toEqual(['< 2', '2 – 4', '4+']);
+
+      let colors = elements.map(e => e.querySelector('i').style.getPropertyValue('background'));
+      expect(colors).toEqual(['red', 'blue', 'green']);
     });
   });
 
@@ -420,12 +425,15 @@ describe('Worldmap', () => {
 
     it('should create a legend with four legend values', () => {
       expect(worldMap.legend).toBeDefined();
-      expect(worldMap.legend._div.outerHTML).toBe(
-        '<div class="info legend leaflet-control"><div class="legend-item">' +
-          '<i style="background:red"></i> &lt; 2</div><div class="legend-item"><i style="background:blue"></i> 2–4</div>' +
-          '<div class="legend-item"><i style="background:green"></i> 4–6</div>' +
-          '<div class="legend-item"><i style="background:undefined"></i> 6+</div></div>'
-      );
+
+      let elements = [...worldMap.legend._div.querySelectorAll('.legend-item')];
+      expect(elements.length).toEqual(4);
+
+      let labels = elements.map(e => e.textContent.trim());
+      expect(labels).toEqual(['< 2', '2 – 4', '4 – 6', '6+']);
+
+      let colors = elements.map(e => e.querySelector('i').style.getPropertyValue('background'));
+      expect(colors).toEqual(['red', 'blue', 'green', '']);
     });
   });
 
@@ -438,12 +446,15 @@ describe('Worldmap', () => {
 
     it('should create a legend with four legend values', () => {
       expect(worldMap.legend).toBeDefined();
-      expect(worldMap.legend._div.outerHTML).toBe(
-        '<div class="info legend leaflet-control"><div class="legend-item">' +
-          '<i style="background:red"></i> &lt; 2</div><div class="legend-item"><i style="background:blue"></i> 2–4</div>' +
-          '<div class="legend-item"><i style="background:green"></i> 4–6</div>' +
-          '<div class="legend-item"><i style="background:undefined"></i> 6+</div></div>'
-      );
+
+      let elements = [...worldMap.legend._div.querySelectorAll('.legend-item')];
+      expect(elements.length).toEqual(4);
+
+      let labels = elements.map(e => e.textContent.trim());
+      expect(labels).toEqual(['< 2', '2 – 4', '4 – 6', '6+']);
+
+      let colors = elements.map(e => e.querySelector('i').style.getPropertyValue('background'));
+      expect(colors).toEqual(['red', 'blue', 'green', '']);
     });
   });
 
@@ -456,12 +467,15 @@ describe('Worldmap', () => {
 
     it('should create a legend with four legend values', () => {
       expect(worldMap.legend).toBeDefined();
-      expect(worldMap.legend._div.outerHTML).toBe(
-        '<div class="info legend leaflet-control"><div class="legend-item">' +
-          '<i style="background:red"></i> *</div><div class="legend-item"><i style="background:blue"></i> some cat</div>' +
-          '<div class="legend-item"><i style="background:green"></i> other cat</div>' +
-          '<div class="legend-item"><i style="background:undefined"></i> asdf</div></div>'
-      );
+
+      let elements = [...worldMap.legend._div.querySelectorAll('.legend-item')];
+      expect(elements.length).toEqual(4);
+
+      let labels = elements.map(e => e.textContent.trim());
+      expect(labels).toEqual(['*', 'some cat', 'other cat', 'asdf']);
+
+      let colors = elements.map(e => e.querySelector('i').style.getPropertyValue('background'));
+      expect(colors).toEqual(['red', 'blue', 'green', '']);
     });
   });
 
@@ -488,12 +502,7 @@ describe('Worldmap', () => {
 
     it('we should find the respective element at the appropriate place in the DOM', () => {
       expect(worldMap.legend).toBeDefined();
-      expect($('.shared-map-legend')[0].innerHTML).toBe(
-        '<div class="info legend leaflet-control"><div class="legend-item">' +
-          '<i style="background:red"></i> &lt; 2</div><div class="legend-item"><i style="background:blue"></i> 2–4</div>' +
-          '<div class="legend-item"><i style="background:green"></i> 4–6</div>' +
-          '<div class="legend-item"><i style="background:undefined"></i> 6+</div></div>'
-      );
+      expect($('.shared-map-legend')[0].innerHTML).toContain('legend-item');
     });
   });
 
