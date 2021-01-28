@@ -297,7 +297,7 @@ export default class WorldMap {
     });
 
     this.createClickthrough(circle, dataPoint);
-    const content = this.getPopupContent(dataPoint);
+    const content = this.getPopupContent(dataPoint.locationName, dataPoint.valueRounded);
     this.createPopup(circle, content);
     return circle;
   }
@@ -319,7 +319,7 @@ export default class WorldMap {
 
       // Re-create popup.
       circle.unbindPopup();
-      const content = this.getPopupContent(dataPoint);
+      const content = this.getPopupContent(dataPoint.locationName, dataPoint.valueRounded);
       this.createPopup(circle, content);
 
       // Re-create clickthrough-link.
@@ -418,16 +418,12 @@ export default class WorldMap {
   extendPopupContent(circle, dataPoint) {
     const popup = circle.getPopup();
     let popupContent = popup._content;
-    popupContent += `\n${this.getPopupContent(dataPoint)}`;
+    popupContent += `\n${this.getPopupContent(dataPoint.locationName, dataPoint.valueRounded)}`;
     circle.setPopupContent(popupContent);
   }
 
-  getPopupContent(dataPoint) {
+  getPopupContent(locationName, value) {
     let unit;
-
-    let locationName = dataPoint.locationName;
-    let value = dataPoint.value;
-
     if (_.isNaN(value)) {
       value = 'n/a';
     } else {
@@ -437,27 +433,7 @@ export default class WorldMap {
     if (this.ctrl.settings.formatOmitEmptyValue && value === 'n/a') {
       return `${locationName}`.trim();
     } else {
-      let fieldPrefix = '__field_';
-
-      let specialFields = [
-        fieldPrefix + this.ctrl.settings.esLocationName,
-        fieldPrefix + this.ctrl.settings.esMetric,
-        fieldPrefix + this.ctrl.settings.esGeoPoint,
-      ];
-
-      let freeDataFields = Object.keys(dataPoint).filter(
-        (key: string) => key.startsWith(fieldPrefix) && !specialFields.includes(key)
-      );
-
-      let freeDataDisplay = freeDataFields
-        .map((field: string) => {
-          let name = field.slice(fieldPrefix.length);
-          let value = dataPoint[field];
-          return `<br />${name}: ${value}`;
-        })
-        .join('');
-
-      return `${locationName}: ${value} ${unit || ''}${freeDataDisplay}`.trim();
+      return `${locationName}: ${value} ${unit || ''}`.trim();
     }
   }
 
