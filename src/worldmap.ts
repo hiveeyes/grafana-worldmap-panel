@@ -499,7 +499,7 @@ export default class WorldMap {
     // controls the map centering and zoom level.
     const mapDimensions = this.ctrl.settings.center;
 
-    let coordinates: LatLngExpression = [mapDimensions.mapCenterLatitude, mapDimensions.mapCenterLongitude];
+    let coordinates: L.LatLngExpression = [mapDimensions.mapCenterLatitude, mapDimensions.mapCenterLongitude];
     let zoomLevel = mapDimensions.mapZoomLevel;
 
     if (mapDimensions.mapFitData) {
