@@ -4,7 +4,6 @@ import './libs/leaflet_plus';
 import * as L from 'leaflet';
 import WorldmapCtrl from './worldmap_ctrl';
 import { ColorModes } from './model';
-import { LatLngExpression } from 'leaflet';
 
 const tileServers = {
   'CARTO Positron': {
