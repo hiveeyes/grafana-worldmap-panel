@@ -1,4 +1,63 @@
 # Changelog
+## Entries
+
+## v1.1.1
+
+- Allow the key to be an array in the location data. For example:
+```json
+[ 
+  {
+    "key": "US",
+    "latitude": 37.09024,
+    "longitude": -95.712891,
+    "name": "United States"
+  },
+  {
+    "key": [
+      "US.CA","US-CA","US_California"
+    ],
+    "latitude": 36.17,
+    "longitude": -119.7462,
+    "name": "California"
+  },
+  {
+    "key": [
+      "US.IA","US-IA","US_Iowa"
+    ],
+    "latitude": 42.0046,
+    "longitude": -93.214,
+    "name": "Iowa"
+  },
+  {
+    "key": "Unknown",
+    "latitude": 66,
+    "longitude": 66,
+    "name": "Unknown"
+  }
+]
+```
+- Support hierarchical keys with segments delimited by '.-_'. The longest match at a segment boundary wins. For example, with the location data above, a key of "US.CA.PaloAlto" will be matching "US.CA". "US-Unknown" will match "US".
+- If the location data has an entry with key="unknown", this entry will be returned for any un-matched input data.
+- Added a built-in location data file "world_regions", with 2 letter country code and provinces in China and states in the US.
+- Made circle area (instead of radius) to be linear in data value.
+- Added 'kMGTP' unit to the data value
+
+## v1.0.1
+
+- Release for Grafana 7.0 with plugin signing
+
+## v0.2.1
+
+- Fixes error handling that made everything disappear in edit mode, [#213](https://github.com/grafana/worldmap-panel/issues/213)
+- Fixes partial (not full height) map on first render [#212](https://github.com/grafana/worldmap-panel/issues/212)
+
+## v0.2.0
+
+- Convert to TypeScript, webpack and Jest
+- Use Yarn on CircleCI
+- Add missing dev dependencies
+- Tweak for incorrect height on render
+  which occurs more frequently in Grafana 6.0
 
 ## v0.1.2
 
@@ -13,7 +72,7 @@
 ## v0.1.0
 
 - Configuration option for turning mouse wheel zoom on or off. [#140](https://github.com/grafana/worldmap-panel/issues/140) Thanks [@Perlovka](https://github.com/Perlovka)
-- Upgrade to Leaflet JS [#132](https://github.com/grafana/worldmap-panel/pull/132) Thanks [@cbarbier](https://github.com/cbarbier)  
+- Upgrade to Leaflet JS [#132](https://github.com/grafana/worldmap-panel/pull/132) Thanks [@cbarbier](https://github.com/cbarbier)
 
 ## v0.0.21
 

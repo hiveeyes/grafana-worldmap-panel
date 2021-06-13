@@ -1,5 +1,742 @@
 [
   {
+    "key": "Unknown",
+    "latitude": 20,
+    "longitude": 170,
+    "name": "Unknown"
+  },
+  {
+    "key": ["CN_shanghai","CN-SH","CN.SH"],
+    "latitude": 31.1667,
+    "longitude": 121.4667,
+    "name": "Shanghai"
+  },
+  {
+    "key": ["CN_guangdong","CN-GD","CN.GD"],
+    "latitude": 23.1288,
+    "longitude": 113.2590,
+    "name": "Guangdong"
+  },
+  {
+    "key": ["CN_sichuan","CN-SC","CN.SC"],
+    "latitude": 30.6636,
+    "longitude": 104.0667,
+    "name": "Sichuan"
+  },
+  {
+    "key": ["CN_tianjin","CN-TJ","CN.TJ"],
+    "latitude": 39.1467,
+    "longitude": 117.2056,
+    "name": "Tianjin"
+  },
+  {
+    "key": ["CN_hebei","CN-HE","CN.HE"],
+    "latitude": 38.0422,
+    "longitude": 114.5086,
+    "name": "Hebei"
+  },
+  {
+    "key": ["CN_hubei","CN-HB","CN.HB"],
+    "latitude": 30.5872,
+    "longitude": 114.2881,
+    "name": "Hubei"
+  },
+  {
+    "key": ["CN_chongqing","CN-CQ","CN.CQ"],
+    "latitude": 29.5500,
+    "longitude": 106.5069,
+    "name": "Chongqing"
+  },
+  {
+    "key": ["CN_jilin","CN-JL","CN.JL"],
+    "latitude": 43.9000,
+    "longitude": 125.2000,
+    "name": "Jilin"
+  },
+  {
+    "key": ["CN_jiangsu","CN-JS","CN.JS"],
+    "latitude": 32.0500,
+    "longitude": 118.7667,
+    "name": "Jiangsu"
+  },
+  {
+    "key": ["CN_anhui","CN-AH","CN.AH"],
+    "latitude": 31.8639,
+    "longitude": 117.2808,
+    "name": "Anhui"
+  },
+  {
+    "key": ["CN_guangxi","CN-GX","CN.GX"],
+    "latitude": 22.8192,
+    "longitude": 108.3150,
+    "name": "Guangxi"
+  },
+  {
+    "key": ["CN_shaanxi","CN-SN","CN.SN"],
+    "latitude": 34.2667,
+    "longitude": 108.9000,
+    "name": "Shaanxi"
+  },
+  {
+    "key": ["CN_liaoning","CN-LN","CN.LN"],
+    "latitude": 41.8039,
+    "longitude": 123.4258,
+    "name": "Liaoning"
+  },
+  {
+    "key": ["CN_hunan","CN-HN","CN.HN"],
+    "latitude": 28.1987,
+    "longitude": 112.9709,
+    "name": "Hunan"
+  },
+  {
+    "key": ["CN_henan","CN-HA","CN.HA"],
+    "latitude": 34.7492,
+    "longitude": 113.6605,
+    "name": "Henan"
+  },
+  {
+    "key": ["CN_zhejiang","CN-ZJ","CN.ZJ"],
+    "latitude": 30.2500,
+    "longitude": 120.1675,
+    "name": "Zhejiang"
+  },
+  {
+    "key": ["CN_yunnan","CN-YN","CN.YN"],
+    "latitude": 25.0433,
+    "longitude": 102.7061,
+    "name": "Yunnan"
+  },
+  {
+    "key": ["CN_fujian","CN-FJ","CN.FJ"],
+    "latitude": 26.0769,
+    "longitude": 119.2917,
+    "name": "Fujian"
+  },
+  {
+    "key": ["CN_jiangxi","CN-JX","CN.JX"],
+    "latitude": 28.6842,
+    "longitude": 115.8872,
+    "name": "Jiangxi"
+  },
+  {
+    "key": ["CN_heilongjiang","CN-HL","CN.HL"],
+    "latitude": 45.7500,
+    "longitude": 126.6333,
+    "name": "Heilongjiang"
+  },
+  {
+    "key": ["CN_guizhou","CN-GZ","CN.GZ"],
+    "latitude": 26.5794,
+    "longitude": 106.7078,
+    "name": "Guizhou"
+  },
+  {
+    "key": ["CN_gansu","CN-GS","CN.GS"],
+    "latitude": 36.0617,
+    "longitude": 103.8318,
+    "name": "Gansu"
+  },
+  {
+    "key": ["CN_shanxi","CN-SX","CN.SX"],
+    "latitude": 37.8733,
+    "longitude": 112.5425,
+    "name": "Shanxi"
+  },
+  {
+    "key": ["CN_shandong","CN-SD","CN.SD"],
+    "latitude": 36.6667,
+    "longitude": 116.9833,
+    "name": "Shandong"
+  },
+  {
+    "key": ["CN_xinjiang","CN-XJ","CN.XJ"],
+    "latitude": 43.8250,
+    "longitude": 87.6000,
+    "name": "Xinjiang"
+  },
+  {
+    "key": ["CN_neimenggu","CN-NM","CN.NM"],
+    "latitude": 40.8151,
+    "longitude": 111.6629,
+    "name": "Inner Mongolia"
+  },
+  {
+    "key": ["CN_qinghai","CN-QH","CN.QH"],
+    "latitude": 36.6239,
+    "longitude": 101.7787,
+    "name": "Qinghai"
+  },
+  {
+    "key": ["CN_hainan","CN-HI","CN.HI"],
+    "latitude": 20.0200,
+    "longitude": 110.3200,
+    "name": "Hainan"
+  },
+  {
+    "key": ["CN_ningxia","CN-NX","CN.NX"],
+    "latitude": 38.4795,
+    "longitude": 106.2254,
+    "name": "Ningxia"
+  },
+  {
+    "key": ["CN_xizang","CN-XZ","CN.XZ"],
+    "latitude": 29.6500,
+    "longitude": 91.1000,
+    "name": "Tibet"
+  },
+  {
+    "key": [
+      "US.AK",
+      "US-AK",
+      "US_Alaska"
+    ],
+    "latitude": 61.385,
+    "longitude": -152.2683,
+    "name": "Alaska"
+  },
+  {
+    "key": [
+      "US.AL",
+      "US-AL",
+      "US_Alabama"
+    ],
+    "latitude": 32.799,
+    "longitude": -86.8073,
+    "name": "Alabama"
+  },
+  {
+    "key": [
+      "US.AR",
+      "US-AR",
+      "US_Arkansas"
+    ],
+    "latitude": 34.9513,
+    "longitude": -92.3809,
+    "name": "Arkansas"
+  },
+  {
+    "key": [
+      "US.AS",
+      "US-AS",
+      "US_AmericanSamoa"
+    ],
+    "latitude": 14.2417,
+    "longitude": -170.7197,
+    "name": "American Samoa"
+  },
+  {
+    "key": [
+      "US.AZ",
+      "US-AZ",
+      "US_Arizona"
+    ],
+    "latitude": 33.7712,
+    "longitude": -111.3877,
+    "name": "Arizona"
+  },
+  {
+    "key": [
+      "US.CA",
+      "US-CA",
+      "US_California"
+    ],
+    "latitude": 36.17,
+    "longitude": -119.7462,
+    "name": "California"
+  },
+  {
+    "key": [
+      "US.CO",
+      "US-CO",
+      "US_Colorado"
+    ],
+    "latitude": 39.0646,
+    "longitude": -105.3272,
+    "name": "Colorado"
+  },
+  {
+    "key": [
+      "US.CT",
+      "US-CT",
+      "US_Connecticut"
+    ],
+    "latitude": 41.5834,
+    "longitude": -72.7622,
+    "name": "Connecticut"
+  },
+  {
+    "key": [
+      "US.DC",
+      "US-DC",
+      "US_WashingtonDC",
+      "US_DistrictofColumbia"
+    ],
+    "latitude": 38.8964,
+    "longitude": -77.0262,
+    "name": "Washington DC"
+  },
+  {
+    "key": [
+      "US.DE",
+      "US-DE",
+      "US_Delaware"
+    ],
+    "latitude": 39.3498,
+    "longitude": -75.5148,
+    "name": "Delaware"
+  },
+  {
+    "key": [
+      "US.FL",
+      "US-FL",
+      "US_Florida"
+    ],
+    "latitude": 27.8333,
+    "longitude": -81.717,
+    "name": "Florida"
+  },
+  {
+    "key": [
+      "US.GA",
+      "US-GA",
+      "US_Georgia"
+    ],
+    "latitude": 32.9866,
+    "longitude": -83.6487,
+    "name": "Georgia"
+  },
+  {
+    "key": [
+      "US.HI",
+      "US-HI",
+      "US_Hawaii"
+    ],
+    "latitude": 21.1098,
+    "longitude": -157.5311,
+    "name": "Hawaii"
+  },
+  {
+    "key": [
+      "US.IA",
+      "US-IA",
+      "US_Iowa"
+    ],
+    "latitude": 42.0046,
+    "longitude": -93.214,
+    "name": "Iowa"
+  },
+  {
+    "key": [
+      "US.ID",
+      "US-ID",
+      "US_Idaho"
+    ],
+    "latitude": 44.2394,
+    "longitude": -114.5103,
+    "name": "Idaho"
+  },
+  {
+    "key": [
+      "US.IL",
+      "US-IL",
+      "US_Illinois"
+    ],
+    "latitude": 40.3363,
+    "longitude": -89.0022,
+    "name": "Illinois"
+  },
+  {
+    "key": [
+      "US.IN",
+      "US-IN",
+      "US_Indiana"
+    ],
+    "latitude": 39.8647,
+    "longitude": -86.2604,
+    "name": "Indiana"
+  },
+  {
+    "key": [
+      "US.KS",
+      "US-KS",
+      "US_Kansas"
+    ],
+    "latitude": 38.5111,
+    "longitude": -96.8005,
+    "name": "Kansas"
+  },
+  {
+    "key": [
+      "US.KY",
+      "US-KY",
+      "US_Kentucky"
+    ],
+    "latitude": 37.669,
+    "longitude": -84.6514,
+    "name": "Kentucky"
+  },
+  {
+    "key": [
+      "US.LA",
+      "US-LA",
+      "US_Louisiana"
+    ],
+    "latitude": 31.1801,
+    "longitude": -91.8749,
+    "name": "Louisiana"
+  },
+  {
+    "key": [
+      "US.MA",
+      "US-MA",
+      "US_Massachusetts"
+    ],
+    "latitude": 42.2373,
+    "longitude": -71.5314,
+    "name": "Massachusetts"
+  },
+  {
+    "key": [
+      "US.MD",
+      "US-MD",
+      "US_Maryland"
+    ],
+    "latitude": 39.0724,
+    "longitude": -76.7902,
+    "name": "Maryland"
+  },
+  {
+    "key": [
+      "US.ME",
+      "US-ME",
+      "US_Maine"
+    ],
+    "latitude": 44.6074,
+    "longitude": -69.3977,
+    "name": "Maine"
+  },
+  {
+    "key": [
+      "US.MI",
+      "US-MI",
+      "US_Michigan"
+    ],
+    "latitude": 43.3504,
+    "longitude": -84.5603,
+    "name": "Michigan"
+  },
+  {
+    "key": [
+      "US.MN",
+      "US-MN",
+      "US_Minnesota"
+    ],
+    "latitude": 45.7326,
+    "longitude": -93.9196,
+    "name": "Minnesota"
+  },
+  {
+    "key": [
+      "US.MO",
+      "US-MO",
+      "US_Missouri"
+    ],
+    "latitude": 38.4623,
+    "longitude": -92.302,
+    "name": "Missouri"
+  },
+  {
+    "key": [
+      "US.MP",
+      "US-MP",
+      "US_NorthernMarianaIslands"
+    ],
+    "latitude": 14.8058,
+    "longitude": 145.5505,
+    "name": "Northern Mariana Islands"
+  },
+  {
+    "key": [
+      "US.MS",
+      "US-MS",
+      "US_Mississippi"
+    ],
+    "latitude": 32.7673,
+    "longitude": -89.6812,
+    "name": "Mississippi"
+  },
+  {
+    "key": [
+      "US.MT",
+      "US-MT",
+      "US_Montana"
+    ],
+    "latitude": 46.9048,
+    "longitude": -110.3261,
+    "name": "Montana"
+  },
+  {
+    "key": [
+      "US.NC",
+      "US-NC",
+      "US_NorthCarolina"
+    ],
+    "latitude": 35.6411,
+    "longitude": -79.8431,
+    "name": "North Carolina"
+  },
+  {
+    "key": [
+      "US.ND",
+      "US-ND",
+      "US_NorthDakota"
+    ],
+    "latitude": 47.5362,
+    "longitude": -99.793,
+    "name": "North Dakota"
+  },
+  {
+    "key": [
+      "US.NE",
+      "US-NE",
+      "US_Nebraska"
+    ],
+    "latitude": 41.1289,
+    "longitude": -98.2883,
+    "name": "Nebraska"
+  },
+  {
+    "key": [
+      "US.NH",
+      "US-NH",
+      "US_NewHampshire"
+    ],
+    "latitude": 43.4108,
+    "longitude": -71.5653,
+    "name": "New Hampshire"
+  },
+  {
+    "key": [
+      "US.NJ",
+      "US-NJ",
+      "US_NewJersey"
+    ],
+    "latitude": 40.314,
+    "longitude": -74.5089,
+    "name": "New Jersey"
+  },
+  {
+    "key": [
+      "US.NM",
+      "US-NM",
+      "US_NewMexico"
+    ],
+    "latitude": 34.8375,
+    "longitude": -106.2371,
+    "name": "New Mexico"
+  },
+  {
+    "key": [
+      "US.NV",
+      "US-NV",
+      "US_Nevada"
+    ],
+    "latitude": 38.4199,
+    "longitude": -117.1219,
+    "name": "Nevada"
+  },
+  {
+    "key": [
+      "US.NY",
+      "US-NY",
+      "US_NewYork"
+    ],
+    "latitude": 42.1497,
+    "longitude": -74.9384,
+    "name": "New York"
+  },
+  {
+    "key": [
+      "US.OH",
+      "US-OH",
+      "US_Ohio"
+    ],
+    "latitude": 40.3736,
+    "longitude": -82.7755,
+    "name": "Ohio"
+  },
+  {
+    "key": [
+      "US.OK",
+      "US-OK",
+      "US_Oklahoma"
+    ],
+    "latitude": 35.5376,
+    "longitude": -96.9247,
+    "name": "Oklahoma"
+  },
+  {
+    "key": [
+      "US.OR",
+      "US-OR",
+      "US_Oregon"
+    ],
+    "latitude": 44.5672,
+    "longitude": -122.1269,
+    "name": "Oregon"
+  },
+  {
+    "key": [
+      "US.PA",
+      "US-PA",
+      "US_Pennsylvania"
+    ],
+    "latitude": 40.5773,
+    "longitude": -77.264,
+    "name": "Pennsylvania"
+  },
+  {
+    "key": [
+      "US.PR",
+      "US-PR",
+      "US_PuertoRico"
+    ],
+    "latitude": 18.2766,
+    "longitude": -66.335,
+    "name": "Puerto Rico"
+  },
+  {
+    "key": [
+      "US.RI",
+      "US-RI",
+      "US_RhodeIsland"
+    ],
+    "latitude": 41.6772,
+    "longitude": -71.5101,
+    "name": "Rhode Island"
+  },
+  {
+    "key": [
+      "US.SC",
+      "US-SC",
+      "US_SouthCarolina"
+    ],
+    "latitude": 33.8191,
+    "longitude": -80.9066,
+    "name": "South Carolina"
+  },
+  {
+    "key": [
+      "US.SD",
+      "US-SD",
+      "US_SouthDakota"
+    ],
+    "latitude": 44.2853,
+    "longitude": -99.4632,
+    "name": "South Dakota"
+  },
+  {
+    "key": [
+      "US.TN",
+      "US-TN",
+      "US_Tennessee"
+    ],
+    "latitude": 35.7449,
+    "longitude": -86.7489,
+    "name": "Tennessee"
+  },
+  {
+    "key": [
+      "US.TX",
+      "US-TX",
+      "US_Texas"
+    ],
+    "latitude": 31.106,
+    "longitude": -97.6475,
+    "name": "Texas"
+  },
+  {
+    "key": [
+      "US.UT",
+      "US-UT",
+      "US_Utah"
+    ],
+    "latitude": 40.1135,
+    "longitude": -111.8535,
+    "name": "Utah"
+  },
+  {
+    "key": [
+      "US.VA",
+      "US-VA",
+      "US_Virginia"
+    ],
+    "latitude": 37.768,
+    "longitude": -78.2057,
+    "name": "Virginia"
+  },
+  {
+    "key": [
+      "US.VI",
+      "US-VI",
+      "US_U.S.VirginIslands"
+    ],
+    "latitude": 18.0001,
+    "longitude": -64.8199,
+    "name": "U.S. Virgin Islands"
+  },
+  {
+    "key": [
+      "US.VT",
+      "US-VT",
+      "US_Vermont"
+    ],
+    "latitude": 44.0407,
+    "longitude": -72.7093,
+    "name": "Vermont"
+  },
+  {
+    "key": [
+      "US.WA",
+      "US-WA",
+      "US_Washington"
+    ],
+    "latitude": 47.3917,
+    "longitude": -121.5708,
+    "name": "Washington"
+  },
+  {
+    "key": [
+      "US.WI",
+      "US-WI",
+      "US_Wisconsin"
+    ],
+    "latitude": 44.2563,
+    "longitude": -89.6385,
+    "name": "Wisconsin"
+  },
+  {
+    "key": [
+      "US.WV",
+      "US-WV",
+      "US_WestVirginia"
+    ],
+    "latitude": 38.468,
+    "longitude": -80.9696,
+    "name": "West Virginia"
+  },
+  {
+    "key": [
+      "US.WY",
+      "US-WY",
+      "US_Wyoming"
+    ],
+    "latitude": 42.7475,
+    "longitude": -107.2085,
+    "name": "Wyoming"
+  },
+  {
     "key": "AD",
     "latitude": 42.546245,
     "longitude": 1.601554,
@@ -289,8 +1026,8 @@
   },
   {
     "key": "CN",
-    "latitude": 35.86166,
-    "longitude": 104.195397,
+    "latitude": 37,
+    "longitude": 92,
     "name": "China"
   },
   {
