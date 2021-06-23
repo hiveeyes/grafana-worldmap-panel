@@ -4,6 +4,7 @@ import './libs/leaflet_plus';
 import * as L from 'leaflet';
 import WorldmapCtrl from './worldmap_ctrl';
 import { ColorModes } from './model';
+import Mustache from 'mustache';
 
 const tileServers = {
   'CARTO Positron': {
@@ -296,7 +297,7 @@ export default class WorldMap {
     });
 
     this.createClickthrough(circle, dataPoint);
-    const content = this.getPopupContent(dataPoint.locationName, dataPoint.valueRounded);
+    const content = this.getPopupContent(dataPoint.locationName, dataPoint.valueRounded, dataPoint);
     this.createPopup(circle, content);
     return circle;
   }
@@ -318,7 +319,7 @@ export default class WorldMap {
 
       // Re-create popup.
       circle.unbindPopup();
-      const content = this.getPopupContent(dataPoint.locationName, dataPoint.valueRounded);
+      const content = this.getPopupContent(dataPoint.locationName, dataPoint.valueRounded, dataPoint);
       this.createPopup(circle, content);
 
       // Re-create clickthrough-link.
@@ -417,11 +418,11 @@ export default class WorldMap {
   extendPopupContent(circle, dataPoint) {
     const popup = circle.getPopup();
     let popupContent = popup._content;
-    popupContent += `\n${this.getPopupContent(dataPoint.locationName, dataPoint.valueRounded)}`;
+    popupContent += `\n${this.getPopupContent(dataPoint.locationName, dataPoint.valueRounded, dataPoint)}`;
     circle.setPopupContent(popupContent);
   }
 
-  getPopupContent(locationName, value) {
+  getPopupContent(locationName, value, dataPoint) {
     let unit;
     if (_.isNaN(value)) {
       value = 'n/a';
@@ -429,6 +430,12 @@ export default class WorldMap {
       unit = value && value === 1 ? this.ctrl.settings.unitSingular : this.ctrl.settings.unitPlural;
     }
 
+    if (this.ctrl.settings.extLabelTemplate) {
+      const data = { locationName, value, dataPoint };
+      const resolved = Mustache.render(this.ctrl.settings.extLabelTemplate, data);
+      // console.debug('getTemplatePopupContent', { resolved, template: this.ctrl.settings.extLabelTemplate, data });
+      return resolved;
+    }
     if (this.ctrl.settings.formatOmitEmptyValue && value === 'n/a') {
       return `${locationName}`.trim();
     } else {

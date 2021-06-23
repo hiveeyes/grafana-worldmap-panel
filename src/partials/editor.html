@@ -547,6 +547,12 @@
                placeholder="plural form"
                ng-change="ctrl.render()" ng-model-onblur/>
     </div>
+    <div class="gf-form">
+        <label class="gf-form-label width-10">Ext Label Template</label>
+        <input type="text" class="input-small gf-form-input width-30" ng-model="ctrl.panel.extLabelTemplate"
+               placeholder="ext label template {{mustache template}}"
+               ng-change="ctrl.render()" ng-model-onblur/>
+    </div>
 </div>
 
 <div class="gf-form-group">

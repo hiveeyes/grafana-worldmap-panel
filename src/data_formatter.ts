@@ -146,6 +146,7 @@ export default class DataFormatter {
       valueFormatted: value,
       valueRounded: 0,
       link: link,
+      fields: {},
     };
 
     dataValue.valueRounded = kbn.roundValue(dataValue.value, this.settings.decimals || 0);
@@ -239,6 +240,8 @@ export default class DataFormatter {
               const value = row[columnNames[columnName]];
               const key = '__field_' + columnName;
               dataValue[key] = value;
+              // Add to fields fields map..
+              dataValue.fields[columnName] = value;
             }
 
             // Bookkeeping for computing valueRange.

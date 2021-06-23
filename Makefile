@@ -7,6 +7,11 @@ package:
 	npx grafana-toolkit plugin:ci-build --finish
 	npx grafana-toolkit plugin:ci-package
 
+deploy-local:
+    # TODO be flexible and not nailed
+	@cp ci/packages/grafana-map-panel-0.15.0.zip ~/Projects/avenge/docker/local/grafana/plugins
+	@ls -al ~/Projects/avenge/docker/local/grafana/plugins/grafan*.zip
+
 publish: check-tools check-token
 
 	@# Before running this, export your GitHub access token.
